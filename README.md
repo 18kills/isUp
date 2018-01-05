@@ -13,3 +13,4 @@ Ex: 192.168.0.12
 Then it pings all of the possible IP addresses on that network            
 Ex: 192.168.0.1-192.168.0.255           
 If the ping from the IP address is recieved then the IP address is up          
+When the IP address is up isUp echos the IP address and that it is up
