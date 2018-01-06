@@ -9,4 +9,7 @@ s.close()
 print(localIP)
 localIP=localIP[:localIP.find(".",localIP.find(".")+localIP.find(".",localIP.find("."))+localIP.find(".",localIP.find(".",localIP.find("."))),)]
 for x in range(255):
-    ping=os.system("ping -c 5 ")
+        print localIP+"."+str(x)
+        ping=os.system("ping -c 5 -w 2 "+localIP+"."+str(x))
+        if ping!=0:
+                print localIP+"."+str(x)+" is up"
