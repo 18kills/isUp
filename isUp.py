@@ -1,4 +1,5 @@
 #!/usr/bin/python
+#SLOW
 import socket
 import os
 
@@ -8,8 +9,6 @@ localIP=s.getsockname()[0]
 s.close()
 print(localIP)
 localIP=localIP[:localIP.find(".",localIP.find(".")+localIP.find(".",localIP.find("."))+localIP.find(".",localIP.find(".",localIP.find("."))),)]
-for x in range(255):
-        print localIP+"."+str(x)
-        ping=os.system("ping -c 5 -w 2 "+localIP+"."+str(x))
-        if ping!=0:
-                print localIP+"."+str(x)+" is up"
+for x in range(254):
+        if os.system("ping -c 5 "+localIP+"."+str(x+1))==0:
+                print localIP+"."+str(x+1)+" is up"
